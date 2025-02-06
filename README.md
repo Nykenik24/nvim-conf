@@ -33,6 +33,6 @@ The `lua/config/` directory contains two subdirectories, each having configurati
 The `lua/plugins/` directory contains all plugins installed.
 
 ## Screenshots
-<img src="https://github.com/user-attachments/assets/cc70ee5c-c14d-4265-949a-705c3a8fa7ab" alt="4 buffers open" width="700" heigth="500"> <img src="https://github.com/user-attachments/assets/fb8f2fc7-d6ed-4b17-99e9-c22f898e43f2" alt="ranger-like file explorer" width="700" height="375">
+<img src="https://github.com/user-attachments/assets/cc70ee5c-c14d-4265-949a-705c3a8fa7ab" alt="4 buffers open" width="700" heigth="500" title="4 buffers open"> <img src="https://github.com/user-attachments/assets/fb8f2fc7-d6ed-4b17-99e9-c22f898e43f2" alt="ranger-like file explorer" width="700" height="375" title="file explorer">
 
 
