@@ -6,6 +6,8 @@ local set = vim.keymap.set
 -- neaterm --
 set("n", "<leader>t", "", { desc = "Terminal" })
 set("n", "<leader>tf", "<cmd>NeatermFloat<cr>", { desc = "Open float terminal" })
+set("n", "<leader>tv", "<cmd>NeatermVertical<cr>", { desc = "Open vertical terminal" })
+set("n", "<leader>th", "<cmd>NeatermHorizontal<cr>", { desc = "Open horizontal terminal" })
 
 -- lsp actions --
 set("n", "<leader>l", "", { desc = "LSP actions" })
