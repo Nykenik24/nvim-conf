@@ -11,7 +11,7 @@ return function()
 			"lemminx",
 			"marksman",
 			"quick_lint_js",
-			-- 'tsserver', -- requires npm to be installed
+			"ts_ls", -- requires npm to be installed
 			-- 'yamlls', -- requires npm to be installed
 		},
 	})
@@ -51,6 +51,12 @@ return function()
 
 	lspconfig.clangd.setup({
 		cmd = { "clangd" },
+		on_attach = lsp_attach,
+		capabilities = lsp_capabilities,
+	})
+
+	lspconfig.ts_ls.setup({
+		filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact", ".js", ".jsx" },
 		on_attach = lsp_attach,
 		capabilities = lsp_capabilities,
 	})
