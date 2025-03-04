@@ -13,6 +13,8 @@ return {
 				sh = { "shfmt" },
 				css = { "prettierd" },
 				html = { "htmlbeautifier" },
+				cpp = { "clang-format" },
+				json = { "jsonlint" },
 			},
 		})
 	end,
