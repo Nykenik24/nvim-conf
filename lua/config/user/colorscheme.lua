@@ -1,11 +1,12 @@
 -- colorscheme
 local colorschemes = {
-	preferred = "kanagawa",
+	preferred = "terafox",
 	[1] = "base16-snazzy",
 	[2] = "base16-nord",
 	[3] = "base16-circus",
 	[4] = "base16-onedark",
 	[5] = "base16-gruvbox-dark-hard",
+	[6] = "kanagawa",
 	default = "base16-default-dark",
 }
 
