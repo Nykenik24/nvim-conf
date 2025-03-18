@@ -3,24 +3,24 @@ return function()
 	require("mason-lspconfig").setup({
 		-- Install these LSPs automatically
 		ensure_installed = {
-			-- 'bashls', -- requires npm to be installed
-			-- 'cssls', -- requires npm to be installed
-			-- 'html', -- requires npm to be installed
+			"bashls",
+			"cssls",
+			"html",
 			"lua_ls",
-			-- 'jsonls', -- requires npm to be installed
+			"jsonls",
 			"lemminx",
 			"marksman",
 			"quick_lint_js",
-			"ts_ls", -- requires npm to be installed
-			-- 'yamlls', -- requires npm to be installed
+			"ts_ls",
+			"yamlls",
+			"gopls",
+			"taplo",
 		},
 	})
 
 	local lspconfig = require("lspconfig")
 	local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-	local lsp_attach = function(client, bufnr)
-		-- Create your keybindings here...
-	end
+	local lsp_attach = function(client, bufnr) end
 
 	-- Call setup on each LSP server
 	require("mason-lspconfig").setup_handlers({
@@ -61,6 +61,25 @@ return function()
 		capabilities = lsp_capabilities,
 	})
 
+	lspconfig.gopls.setup({
+		settings = {
+			gopls = {
+				analyses = {
+					unusedparams = true,
+					shadow = true,
+				},
+				staticcheck = true,
+			},
+		},
+		on_attach = lsp_attach,
+		capabilities = lsp_capabilities,
+	})
+
+	lspconfig.taplo.setup({
+		on_attach = lsp_attach,
+		capabilities = lsp_capabilities,
+	})
+
 	-- Globally configure all LSP floating preview popups (like hover, signature help, etc)
 	local open_floating_preview = vim.lsp.util.open_floating_preview
 	function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
@@ -68,4 +87,13 @@ return function()
 		opts.border = opts.border or "rounded" -- Set border to rounded
 		return open_floating_preview(contents, syntax, opts, ...)
 	end
+
+	-- vim.diagnostic.config({
+	-- 	virtual_text = {
+	-- 		severity = { min = vim.diagnostic.severity.ERROR },
+	-- 	},
+	-- 	signs = true,
+	-- 	underline = true,
+	-- 	update_in_insert = false,
+	-- })
 end
