@@ -1,6 +1,6 @@
 -- colorscheme
 local colorschemes = {
-	preferred = "terafox",
+	preferred = "nightfox",
 	[1] = "base16-snazzy",
 	[2] = "base16-nord",
 	[3] = "base16-circus",
