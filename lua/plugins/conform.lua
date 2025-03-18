@@ -15,6 +15,9 @@ return {
 				html = { "htmlbeautifier" },
 				cpp = { "clang-format" },
 				json = { "jsonlint" },
+				go = { "gofumpt" },
+				yaml = { "yamlfmt" },
+				cmake = { "cmakelint" },
 			},
 		})
 	end,
