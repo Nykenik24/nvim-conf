@@ -14,6 +14,7 @@ return {
 				css = { "prettierd" },
 				html = { "htmlbeautifier" },
 				cpp = { "clang-format" },
+				c = { "clang-format" },
 				json = { "jsonlint" },
 				go = { "gofumpt" },
 				yaml = { "yamlfmt" },
