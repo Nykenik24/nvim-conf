@@ -1,12 +1,12 @@
 -- colorscheme
 local colorschemes = {
-	preferred = "nightfox",
+	preferred = "gruvbox",
 	[1] = "base16-snazzy",
 	[2] = "base16-nord",
 	[3] = "base16-circus",
 	[4] = "base16-onedark",
-	[5] = "base16-gruvbox-dark-hard",
 	[6] = "kanagawa",
+	[7] = "nightfox",
 	default = "base16-default-dark",
 }
 
@@ -20,3 +20,7 @@ if not could_apply_colorscheme then
 	)
 	vim.cmd.colorscheme(colorschemes.default)
 end
+
+require("notify").setup({
+	background_colour = "#000000",
+})
