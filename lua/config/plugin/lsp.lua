@@ -15,6 +15,8 @@ return function()
 			"yamlls",
 			"gopls",
 			"taplo",
+			"dotls",
+			"zls",
 		},
 	})
 
@@ -37,8 +39,8 @@ return function()
 		settings = {
 			Lua = {
 				diagnostics = {
-					-- Get the language server to recognize the `vim` global
 					globals = { "vim", "love" },
+					disable = { "lowercase-global" },
 				},
 			},
 		},
@@ -76,6 +78,21 @@ return function()
 	})
 
 	lspconfig.taplo.setup({
+		on_attach = lsp_attach,
+		capabilities = lsp_capabilities,
+	})
+
+	lspconfig.dotls.setup({
+		on_attach = lsp_attach,
+		capabilities = lsp_capabilities,
+	})
+
+	lspconfig.zls.setup({
+		on_attach = lsp_attach,
+		capabilities = lsp_capabilities,
+	})
+
+	lspconfig.ast_grep.setup({
 		on_attach = lsp_attach,
 		capabilities = lsp_capabilities,
 	})
